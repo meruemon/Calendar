@@ -588,10 +588,10 @@ function evForDay(evs, day) {
 /* ─── CLASSIFY ─── */
 function classify(t='') {
   t=t.toLowerCase();
-  if(/会議|ミーティング|meeting|mtg/.test(t)) return 'meeting';
-  if(/セミナー|seminar|発表|講演/.test(t))    return 'seminar';
+  if(/会議|教授会|ミーティング|meeting|mtg/.test(t)) return 'meeting';
+  if(/セミナー|seminar|発表|講演|ゼミ/.test(t))    return 'seminar';
   if(/締切|deadline|提出|due/.test(t))         return 'deadline';
-  if(/講義|授業|class|lecture/.test(t))        return 'lecture';
+  if(/講義|授業|画像情報処理|プログラミング|応用確率|class|lecture/.test(t))        return 'lecture';
   return 'other';
 }
 const tlabel = t=>({meeting:'会議',seminar:'セミナー',deadline:'締切',lecture:'講義',other:'予定'})[t]||'予定';
